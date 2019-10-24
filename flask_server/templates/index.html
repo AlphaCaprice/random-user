@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <script src="{{ url_for('static',filename='js/app.js') }}" defer></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js"></script>
+
+</head>
+<body>
+    <div class="container d-flex w-150 h-150 p-3 mx-auto flex-column">
+
+	  <main role="main" class="inner cover text-center">
+	    <input class="form-control mr-sm-2" type="text" placeholder="Number of people" id="peopleNumber">
+	    <p class="lead text-center">
+	      <button class="btn btn-lg btn-secondary" onclick="getRandomUser()" id="main_button">Get people</button>
+	    </p>
+	  </main>
+
+	</div>
+</body>
+</html>
