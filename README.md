@@ -8,7 +8,7 @@ You can get information about random user from data base by pushing <br>
 
 ## Installation
 
-###Using Docker
+### Using Docker
 
 Download the project via <b>Docker</b>: 
 ```
@@ -20,7 +20,7 @@ docker run -d -p 5000:5000 11199722/flask_app
 ```
 Application will be available on your <b>localhost:5000</b>
 
-###Using git
+### Using git
 Clone the project:
 ```
 git clone https://github.com/AlphaCaprice/random-user.git
