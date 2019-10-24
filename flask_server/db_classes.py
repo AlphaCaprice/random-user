@@ -1,4 +1,4 @@
-from flask_server.app import db
+from app import db
 
 
 class Person(db.Model):
@@ -25,5 +25,5 @@ class Person(db.Model):
         return f"{self.first_name} {self.last_name}"
 
 
-def create_data_bases():
+def create_data_base():
     db.create_all()

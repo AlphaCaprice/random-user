@@ -16,12 +16,64 @@
     <div class="container d-flex w-150 h-150 p-3 mx-auto flex-column">
 
 	  <main role="main" class="inner cover text-center">
-	    <input class="form-control mr-sm-2" type="text" placeholder="Number of people" id="peopleNumber">
 	    <p class="lead text-center">
-	      <button class="btn btn-lg btn-secondary" onclick="getRandomUser()" id="main_button">Get people</button>
+	    	<input class="form-control mr-sm-2" type="text" placeholder="Number of people" id="peopleNumber">
+	    	<button class="btn btn-lg btn-secondary" onclick="getRandomUser()" id="main_button">Get people</button>
 	    </p>
 	  </main>
 
+
+	  	<h2 class="mt-4">Random user</h2>
+		<div class="container">
+			<div class="row mb-3 ">
+			    <div class="col-md-3 themed-grid-col">First name</div>
+			    {% if person %}
+			    	<div class="col-md-8 themed-grid-col " id="last_name">{{person.first_name}}</div>
+			    {% else %}
+			    	<div class="col-md-8 themed-grid-col" id="first_name"></div>
+			   	{% endif %}
+		  	</div>
+		  	<div class="row mb-3 ">
+			    <div class="col-md-3 themed-grid-col">Last name</div>
+			    {% if person %}
+			    	<div class="col-md-8 themed-grid-col " id="last_name">{{person.last_name}}</div>
+			    {% else %}
+			    	<div class="col-md-8 themed-grid-col " id="last_name"></div>
+			   	{% endif %}
+		  	</div>
+		  	<div class="row mb-3 ">
+			    <div class="col-md-3 themed-grid-col">Gender</div>
+			    {% if person %}
+			    	<div class="col-md-8 themed-grid-col " id="last_name">{{person.gender}}</div>
+			    {% else %}
+			    	<div class="col-md-8 themed-grid-col " id="last_name"></div>
+			   	{% endif %}
+		  	</div>
+		  	<div class="row mb-3 ">
+			    <div class="col-md-3 themed-grid-col">Location</div>
+			    {% if person %}
+			    	<div class="col-md-8 themed-grid-col " id="last_name">{{person.location}}</div>
+			    {% else %}
+			    	<div class="col-md-8 themed-grid-col " id="last_name"></div>
+			   	{% endif %}
+		  	</div>
+		  	<div class="row mb-3 ">
+			    <div class="col-md-3 themed-grid-col">Email</div>
+			    {% if person %}
+			    	<div class="col-md-8 themed-grid-col " id="last_name">{{person.email}}</div>
+			    {% else %}
+			    	<div class="col-md-8 themed-grid-col " id="last_name"></div>
+			   	{% endif %}
+		  	</div>
+		</div>
+		<form method="POST" action="/random_user/">
+			<p class="lead">
+		  		<button class="btn btn-lg btn-secondary" type="submit" >Show random user</button>
+		 	</p>
+		</form>
+
 	</div>
+
+
 </body>
 </html>

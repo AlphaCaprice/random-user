@@ -1,12 +1,12 @@
 from pathlib import Path
 
 
-from flask import Flask, render_template, jsonify, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
-from flask_server import random_user_module as rum
-from flask_server import db_classes
+import random_user_module as rum
+import db_classes
 
 app = Flask(__name__)
 CORS(app)
@@ -22,7 +22,7 @@ def index():
 
 
 @app.route("/process_data/", methods=['POST'])
-def get_random_user():
+def download_random_user():
     data = request.get_json()
     try:
         number_of_people = int(data['number'])
@@ -30,14 +30,18 @@ def get_random_user():
         return {'answer': 'input value is not number'}
 
     print(number_of_people)
-    person = rum.get_people(number_of_people)
-    data = jsonify(person)
+    number_of_saved = rum.write_people_to_db(number_of_people)
+    data = jsonify({'answer': number_of_saved})
     return data
 
 
-if __name__ == "__main__":
-    if not (Path("/db_files/people.db")).exists():
-        db_classes.create_data_bases()
+@app.route("/random_user/", methods=['POST'])
+def return_random_user():
+    person = rum.random_user_from_db()
+    return render_template('index.html', person=person)
 
-    app.run(host='0.0.0.0', debug=True)
-    # rum.get_people(1)
+
+if __name__ == "__main__":
+    if not (Path("db_files/people.db")).exists():
+        db_classes.create_data_base()
+    app.run(host='0.0.0.0')

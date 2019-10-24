@@ -9,7 +9,7 @@ function getRandomUser(){
 		async:'asynchronous',
 		dataType:'json',
 		success: function(data) {
-			console.log(JSON.stringify(data));
+			alert(data['answer'] + " users have been saved!")
 		},
 		error: function(request, status, error) {
 			console.log("Error: " + error);

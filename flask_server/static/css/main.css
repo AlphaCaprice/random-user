@@ -1,8 +1,3 @@
-/*
- * Globals
- */
-
-/* Links */
 a,
 a:focus,
 a:hover {
@@ -12,13 +7,13 @@ a:hover {
 /* Custom default button */
 .btn-secondary{
   color: #333;  
-  text-shadow: none; /* Prevent inheritance from `body` */
+  text-shadow: none;
   background-color: #fff;
 }
 
 .btn-secondary:hover {
   color: #fff;
-  text-shadow: none; /* Prevent inheritance from `body` */
+  text-shadow: none;
   background-color: #333;
   border: .05rem solid #fff;
 }
@@ -52,6 +47,7 @@ body {
     vertical-align: middle;
     padding: .5rem 4.25rem;
     width: auto;
+    height: 2.9rem;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -62,8 +58,8 @@ body {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
+    /*margin-top: 2rem;*/
+    /*margin-bottom: 1.5rem;*/
 }
 
 
@@ -76,4 +72,12 @@ body {
 .cover .btn-lg {
   padding: .5rem 4.25rem;
   font-weight: 700;
+}
+
+.themed-grid-col {
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgba(86, 61, 124, .15);
+  border: 2px solid rgba(214, 61, 124, .2);
 }
