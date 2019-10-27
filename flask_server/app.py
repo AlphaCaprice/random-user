@@ -22,7 +22,9 @@ def index():
 
 
 if __name__ == "__main__":
-    if not (Path("db_files/people.db")).exists():
+    path = Path("db_files/people.db")
+    if not path.exists():
+        path.parent.mkdir()
         db_classes.create_data_base()
     if len(db_classes.Person.query.all()) < 5:
         rum.write_people_to_db()
