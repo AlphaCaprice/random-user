@@ -8,18 +8,6 @@ You can get information about random user from data base by pushing <br>
 
 ## Installation
 
-### Using Docker
-
-Download the project via <b>Docker</b>: 
-```
-docker pull 11199722/flask_app
-```
-Run the server:
-```
-docker run -d -p 5000:5000 11199722/flask_app
-```
-Application will be available on your <b>localhost:5000</b>
-
 ### Using git
 Clone the project:
 ```
