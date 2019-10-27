@@ -25,9 +25,12 @@ Clone the project:
 ```
 git clone https://github.com/AlphaCaprice/random-user.git
 ```
-Install requirements:
+Create virtual environment and install requirements:
 ```
-pip3 install -r requirements.txt --user
+cd random-user
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
 ```
 Run the application:
 ```
