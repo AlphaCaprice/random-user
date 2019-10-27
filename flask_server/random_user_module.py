@@ -17,7 +17,8 @@ def write_people_to_db(number: int) -> int:
     Returns:
         int: number of users, that have been saved in data base
     """
-
+    # prevent big amount of users
+    number = max(number, 50)
     params = f"?results={number}&inc=gender,name,location,email,login"
     url = f"https://randomuser.me/api/{params}"
     people = requests.get(url).json()

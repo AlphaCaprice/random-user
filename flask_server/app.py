@@ -44,4 +44,4 @@ def return_random_user():
 if __name__ == "__main__":
     if not (Path("db_files/people.db")).exists():
         db_classes.create_data_base()
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)
