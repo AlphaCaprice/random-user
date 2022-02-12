@@ -49,3 +49,6 @@ def random_user_from_db() -> dict:
     qry_all_people = Person.query.all()
     random_person_number = random.randint(0, len(qry_all_people)-1)
     return qry_all_people[random_person_number].serialize
+
+def one_more_new_function():
+    ...
